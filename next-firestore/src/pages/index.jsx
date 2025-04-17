@@ -19,7 +19,8 @@ export default function Home(){
         <Navigator name="Navegation/index.jsx" link="/navegation"/>
         <Navigator name="Client/[getClient]" link="/client/123"/>
         <Navigator name="State" link="/state"/>
-        <Navigator name="Integration" link="/integration"/>
+        <Navigator name="Integration" link="/integration"/> 
+        <Navigator name="Static content" link="/static"/>
       </div>
     </>
   );
