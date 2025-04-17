@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Layout from "../components/Layout";
 export default function Jsx() {
     const a = 4;
     const b = 3;
@@ -9,12 +11,12 @@ export default function Jsx() {
         return  <h2>{ "muito legal".toUpperCase() }</h2>
     }
     return (
-        <div>
+        <Layout>
             {title}
             {subtitle}
             <p>
                 {JSON.stringify(obj)}
             </p>
-        </div>
+        </Layout>
     );
 }

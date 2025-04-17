@@ -1,0 +1,11 @@
+.navigator{
+    background-color: black;
+    padding: 30px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.navigator:hover{
+    background-color: gray;
+    cursor: pointer;
+}
