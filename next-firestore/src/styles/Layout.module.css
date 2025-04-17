@@ -1,0 +1,22 @@
+.layout{
+    height: 100vh;
+    display: flex; 
+    flex-direction: column;
+}
+
+.header{
+    display: flex; 
+    justify-content: flex-end;
+    padding: 10px 20px;
+}
+
+.header a{
+    background-color: black;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+.content{
+    padding: 25px;
+    height: 100%;
+}

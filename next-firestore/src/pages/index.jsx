@@ -1,11 +1,13 @@
 import Link from "next/link";
+import Navigator from "../components/Navigator";
 
 export default function Home(){
   return (
     <>
-      <h1>Home page</h1>
-      <h3><Link href={"/stylist"}>Stylist</Link></h3><br />
-      <h3><Link href={"/example"}>Example</Link></h3>
+      <h1>Home page</h1> 
+      <Navigator name="Stylist" link="/stylist"/>
+      <Navigator name="Example" link="/example"/>
+      <Navigator name="Jsx" link="/jsx"/>
     </>
   );
 }
