@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import firebase from "../config"
 import Client from "../../core/Client";
 import ClientRepository from "../../core/ClientRepository";
 
@@ -7,8 +7,8 @@ export default class ClientCollection implements ClientRepository {
     #conversor = {
         toFirestore(client: Client) {
             return {
-                nome: client.name,
-                idade: client.age,
+                name: client.name,
+                age: client.age,
             }
         },
         fromFirestore(snapshot: firebase.firestore.QueryDocumentSnapshot, 

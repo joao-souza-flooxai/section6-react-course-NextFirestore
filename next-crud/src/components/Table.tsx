@@ -48,7 +48,7 @@ export default function Tabela(props: TabelaProps) {
         {props.deletedClient && (
           <button 
             className="flex justify-center items-center text-red-500 rounded-full p-2 m-1 hover:bg-purple-50"
-            onClick={() => props.deletedClient?.(client)} 
+            onClick={() => confirm(`Do you really wanna delete the client: ${client.id}?`) ? props.deletedClient?.(client): false} 
           >
             {TrashIcon}
           </button>
