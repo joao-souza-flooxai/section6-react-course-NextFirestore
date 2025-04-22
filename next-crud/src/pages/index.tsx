@@ -2,6 +2,8 @@ import Layout from "../components/Layout";
 import Table from "../components/Table"
 import Client from "../core/Client";
 import Button from "../components/Button";
+import { useState } from "react";
+import Form from "../components/Form";
 export default function Home() {
 
   const clients = [
@@ -19,6 +21,12 @@ export default function Home() {
     console.log("Deleted client:", client);
   }
 
+  function saveClient(client: Client) {
+    console.log("Saved client:", client);
+  }
+
+  const [visible, setVisible] = useState<'table' | 'form'>('table');
+  
   return (
     <div className="
       flex justify-center items-center h-screen
@@ -26,10 +34,30 @@ export default function Home() {
       text-white"
     >
       <Layout title="Simple Registration">
-        <div className="flex justify-end">
-          <Button color="green">New Client</Button>
-        </div>
-        <Table clients={clients} selectedClient={selectedClient} deletedClient={deletedClient} ></Table>
+        
+        {visible ==='table' ? (
+            <>
+              <div className="flex justify-end">
+                <Button color="green" onClick={()=>setVisible('form')}>New Client</Button>
+              </div>
+              <Table 
+                clients={clients} 
+                selectedClient={selectedClient} 
+                deletedClient={deletedClient} 
+              />
+            </>
+          ): (
+
+            <Form 
+              client={clients[1]}
+              onChangeClient={saveClient}
+              canceled={()=>setVisible('table')}
+            />
+
+          )
+        }
+        
+      
       </Layout>
     </div>
   );
