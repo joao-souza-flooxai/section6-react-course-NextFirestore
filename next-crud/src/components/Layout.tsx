@@ -1,32 +1,21 @@
-import React, { ReactNode } from "react";
-import Link from "next/link";
-import Head from "next/head";
+import Title from "./Title";
 
-type Props = {
-  children?: ReactNode;
-  title?: string;
-};
+interface LayoutProps{
+    title:string,
+    children: any
+}
 
-const Layout = ({ children, title = "This is the default title" }: Props) => (
-  <div>
-    <Head>
-      <title>{title}</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <header>
-      <nav>
-        <Link href="/">Home</Link> | <Link href="/about">About</Link> |{" "}
-        <Link href="/users">Users List</Link> |{" "}
-        <a href="/api/users">Users API</a>
-      </nav>
-    </header>
-    {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
-  </div>
-);
-
-export default Layout;
+export default function Layout(props:LayoutProps) {
+  return (
+      <div className="
+          flex flex-col w-2/3
+          bg-white text-gray-800
+          rounded-md
+      ">
+        <Title>{props.title}</Title>
+          <div className="p-6">
+            {props.children}
+          </div>
+      </div>
+  );
+}
